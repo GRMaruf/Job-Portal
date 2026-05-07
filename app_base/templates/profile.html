@@ -1,0 +1,46 @@
+{% extends 'master/base.html' %}
+
+{% block content %}
+  <div class="d-flex justify-content-between p-3">
+    <div>
+      <h1>Profile Information</h1>
+      <p class="text-muted mb-0">
+        <strong>Username:</strong> {{ user.username }}
+      </p>
+      <p class="text-muted mb-0">
+        <strong>User Type:</strong> {{ user.user_type }}
+      </p>
+    </div>
+    <div>
+      <a class="btn btn-outline-primary" href="{% url 'update_profile' request.user.id %}">Edit Profile</a>
+    </div>
+  </div>
+  <div class="card-body d-block">
+    {% if user.user_type == 'Seeker' %}
+      <div>
+        {% if user.seeker.image %}
+          <img src="{{ user.seeker.image.url }}" width="300px" />
+        {% endif %}
+      </div>
+      <div>
+        <strong>Name:</strong> {{ user.seeker.name }}
+      </div>
+      <div>
+        <strong>Bio:</strong> {{ user.seeker.bio }}
+      </div>
+      <div>
+        <strong>Email:</strong> {{ user.seeker.email }}
+      </div>
+    {% else %}
+      <div>
+        <strong>Name:</strong> {{ user.recruiter.name }}
+      </div>
+      <div>
+        <strong>Address:</strong> {{ user.recruiter.address }}
+      </div>
+      <div>
+        <strong>Email:</strong> {{ user.recruiter.email }}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

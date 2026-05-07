@@ -1,0 +1,22 @@
+{% extends 'master/base.html' %} {% block content %}
+<div>
+  <h1>Job Portal</h1>
+</div>
+<div class="card-body m-2 border">
+  <h5 class="card-title">{{job.title}}</h5>
+  <h6 class="card-subtitle mb-2 text-muted">
+    {{job.category}} | {{job.openings}} opennings.
+  </h6>
+  <i>published by - {{job.created_by}} </i>
+  <p class="card-text">
+    {{job.description|default:"No descriptions yet."}}
+  </p>
+  {% for skill in job.skill_set.all %}
+  <div class="badge rounded-pill bg-primary">{{skill}}</div>
+  {% endfor %}
+  <div>
+    <a href="{% url 'apply' job.id %}" class="card-link">Apply</a>
+    <a href="#" class="card-link">See details</a>
+  </div>
+</div>
+{% endblock content %}

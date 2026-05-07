@@ -1,0 +1,58 @@
+{% extends 'master/base.html' %}
+
+{% block content %}
+  <div class="d-flex justify-content-between p-3">
+    <div>
+      <h1>Recruiter Dashboard</h1>
+      <p class="text-muted mb-0">{{ user.user_type }} - {{ user.username }}</p>
+    </div>
+    <div>
+      <a class="btn btn-outline-primary" href="{% url 'update_job' 0 %}">Post New Job</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form action="{% url 'add_category' %}" method="post">
+        {% csrf_token %}
+        <div class="d-flex gap-3 p-3">
+          <label class="fs-6">Category:</label>
+          <input type="text" name="name" class="form-control" style="width: 300px;" />
+          <button type="submit" class="btn btn-outline-primary btn-sm">Add Category</button>
+        </div>
+      </form>
+    </div>
+    <div class="col">
+      <form action="{% url 'add_skill' %}" method="post">
+        {% csrf_token %}
+        <div class="d-flex gap-3 p-3">
+          <label class="fs-6">Skill:</label>
+          <input type="text" name="name" class="form-control" style="width: 300px;" />
+          <button type="submit" class="btn btn-outline-primary btn-sm">Add Skill</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card-body my-5 table-responsive">
+    <table class="table">
+      <tr>
+        <td>SL</td>
+        <td>Title</td>
+        <td>Category</td>
+        <td>Openings</td>
+        <td>Actions</td>
+      </tr>
+
+      {% for x in jobs %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ x.title }}</td>
+          <td>{{ x.category }}</td>
+          <td>{{ x.openings }}</td>
+          <td class="table-warning"><a href="{% url 'update_job' x.id %}">Update</a></td>
+          <td class="table-warning"><a href="{% url 'show_applicants' x.id %}">Show Applicants {{applicants_count|default:0}}</a></td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'master/base.html' %} {% block content %}
+<div class="d-flex justify-content-between p-3">
+  <div>
+    <h1>Seeker Dashboard</h1>
+    <p class="text-muted mb-0">{{ user.user_type }} - {{ user.username }}</p>
+  </div>
+</div>
+<div class="row p-3 text-center">
+  <div class="col">
+    <div class="card p-3"><strong>{{applications|length}}</strong> Applications</div>
+  </div>
+  <div class="col">
+    <div class="card p-3"><strong>{{waiting_count|default:0}}</strong> Waiting</div>
+  </div>
+  <div class="col">
+    <div class="card p-3"><strong>{{selected_count|default:0}}</strong> Seelected</div>
+  </div>
+</div>
+<div>
+  <h2 class="text-center">All Applications</h2>
+  <div class="table-responsive">
+    <table class="table table-hoverable">
+      <tr>
+        <th>SL</th>
+        <th>Job Title</th>
+        <th>Category</th>
+        <th>Opennings</th>
+        <th>Status</th>
+      </tr>
+
+      {% for x in applications %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ x.job.title }}</td>
+        <td>{{ x.job.category }}</td>
+        <td>{{ x.job.openings }}</td>
+        <td class="{% if x.status == 'SELECTED' %}text-light bg-success{%else%}bg-warning{% endif %}">{{ x.status }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

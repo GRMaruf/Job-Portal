@@ -1,0 +1,52 @@
+{% extends 'master/base.html' %} {% block content %}
+<div class="d-flex justify-content-between p-3">
+  <div>
+    <h1>Job Portal</h1>
+    <p class="text-muted mb-0">Total <strong>{{jobs|length}}</strong> Jobs. Search your preffered job here.</p>
+  </div>
+  <div>
+    <form class="d-flex" method="get">
+      {% csrf_token %}
+      <input
+        class="form-control me-2"
+        type="search"
+        name="search_text"
+        placeholder="Search text"
+        aria-label="Search"
+      />
+      <select name="category" class="form-select me-2 text-muted" style="background-color: transparent;">
+        <option value="">Category</option>
+        {% for x in categories %}
+          <option value="{{x.id}}">{{x.name}}</option>
+        {% endfor %}
+      </select>
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</div>
+<div class="row">
+  {% for job in jobs %}
+  <div class="card m-2 col-3">
+    <div class="card-body">
+      <h5 class="card-title">{{job.title}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        {{job.category}} | {{job.openings}} opennings.
+      </h6>
+      <i>published by - {{job.created_by}} </i>
+      <p class="card-text">
+        {{job.description|truncatechars:50|default:"No descriptions yet."}}
+      </p>
+      {% for skill in job.skill_set.all %}
+      <div class="badge rounded-pill bg-primary">{{skill}}</div>
+      {% endfor %}
+      <div>
+        <a href="{% url 'apply' job.id %}" class="card-link">Apply</a>
+        <a href="{% url 'job_details' job.id %}" class="card-link"
+          >See details</a
+        >
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}

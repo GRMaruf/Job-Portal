@@ -1,0 +1,23 @@
+{% extends 'master/base.html' %}
+
+
+{% block content %}
+    <div class="mx-auto" style="max-width: 500px;">
+        <div class="card-body border">
+            <h2>Apply Job</h2>
+            <div class="text-muted">
+                <span>{{job.title}}</span><br>
+                <span>{{job.category}}</span>|
+                <span>{{job.openings}} opennings</span>
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <div class="d-block text-center">
+                    <button type="submit" class="btn btn-outline-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+    
