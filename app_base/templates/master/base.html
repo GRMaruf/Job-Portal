@@ -4,24 +4,103 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <title></title>
     <style>
-      .nav-link{
-        font-weight: 500;
+      :root {
+        --brand: #6833ca;
+        --brand-transperant: rgba(231, 217, 255, 0.53);
+        --brand-light: rgba(217, 197, 251, 0.98);
+        --brand-shadow: #6833ca7e;
+        --brand-dark: #290271;
       }
-      .nav-link:hover{
-        font-weight: 700;
+      .brand {
+        color: var(--brand);
       }
-      .form-control{
-        background: transparent;
+      .brand-light {
+        color: var(--brand-light);
+      }
+      .brand-dark {
+        color: var(--brand-dark);
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, #fff 0%, #fff 40%, rgba(255, 255, 255, 0) 100%), linear-gradient(to right, #065e61, #6831ce);
+        position: relative;
+      }
+      .navbar {
+        background-color: var(--brand-transperant);
+      }
+      .navbar-brand {
+        color: var(--brand-dark) !important;
+      }
+      .nav-link {
+        color: var(--brand) !important;
+        transition: 300ms;
+      }
+      .nav-link:hover {
+        transform: scale(1.05, 1.05);
+        color: var(--brand-dark) !important;
+        transform: translateY(-3px);
       }
       .content {
-        background-color: aliceblue;
-        min-height: 70vh;
+        background-blend-mode: color;
+        flex: 1;
         padding: 8px;
       }
-      label{
+      .btn-outline-primary {
+        border-color: var(--brand-dark) !important;
+        color: var(--brand-dark);
+      }
+      .btn-outline-primary:hover {
+        background-color: var(--brand) !important;
+        color: white;
+      }
+      .form-control,
+      .form-select {
+        border-color: var(--brand-dark);
+      }
+      .form-control:focus,
+      .form-select:focus {
+        box-shadow: 0 0 0 0.25rem var(--brand-shadow);
+        border-color: var(--brand-light);
+      }
+      h1 {
+        color: var(--brand-dark);
+      }
+      label {
         font-weight: 700;
+      }
+      .footer {
+        background: var(--brand-dark);
+        padding: 25px 15px;
+        text-align: center;
+      }
+      
+      .social-links {
+        margin-bottom: 12px;
+      }
+      
+      .social-links a {
+        color: white;
+        font-size: 24px;
+        margin: 0 12px;
+        transition: 0.3s;
+        text-decoration: none;
+      }
+      
+      .social-links a:hover {
+        color: var(--brand-light);
+        transform: translateY(-3px);
+      }
+      
+      .text-light {
+        color: #ccc;
+        font-size: 14px;
       }
     </style>
   </head>
@@ -32,7 +111,7 @@
 
       {% endblock %}
     </div>
-    <div class="container-fluid text-center p-5">@2026 All Rights are Reserved.</div>
+    {% include 'master/footer.html' %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

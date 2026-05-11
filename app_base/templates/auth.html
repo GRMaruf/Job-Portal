@@ -2,13 +2,16 @@
 
 
 {% block content %}
-    <div class="mx-auto" style="max-width: 500px;">
-        <div class="card-body border">
-            <h2>{{heading}}</h2>
-            <form method="post">
+    <div class="mx-auto my-3" style="max-width: 500px;">
+        <div class="p-3" style="background-color: var(--brand-light); border-radius: 24px;">
+            <h2 class="text-center my-3">{{heading}}</h2>
+            <p class="text-center">Fill up the form as give to the instructions.</p>
+            <form class="p-3" method="post">
                 {% csrf_token %}
                 {{form.as_p}}
-                <button type="submit" class="btn btn-outline-primary">Submit</button>
+                <div class="d-block text-center">
+                    <button type="submit" class="btn btn-outline-primary">Submit</button>
+                </div>
             </form>
         </div>
     </div>
