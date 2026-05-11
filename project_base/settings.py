@@ -75,16 +75,6 @@ WSGI_APPLICATION = 'project_base.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'pybrothe_grmaruf_job_portal',
-#         'USER': 'pybrothe_grmaruf',
-#         'PASSWORD': '132589,555GRM',
-#         'HOST': 'pybrothers.top',
-#         'PORT': '5432',
-#     }
-# }
 
 DATABASES = {
     'default': {
