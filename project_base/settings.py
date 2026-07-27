@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9sa_2db*@0a-5adn92h!12q*9*uyz__+12z)nb!w35z$cb5y1('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     "whitenoise.runserver_nostatic",
     'django.contrib.staticfiles',
+    # custom
     'app_base',
 ]
 
@@ -83,13 +84,13 @@ DATABASES = {
     }
 }
 
-STORAGES = {
-    # ...
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
-
+# STORAGES = {
+#     # ...
+#     "staticfiles": {
+#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+#     },
+# }
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators

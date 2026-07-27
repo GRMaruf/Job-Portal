@@ -4,3 +4,4 @@ from app_base.models import *
 # Register your models here.
 admin.site.register(JobPost)
 admin.site.register(Applications)
+admin.site.register([UserModel])
