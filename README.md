@@ -3,7 +3,8 @@
 A full-stack job board where employers post listings and job seekers apply — built with Django, with separate authentication and dashboards for each user role.
 
 🔗 **Live demo:** https://jobs.pybrothers.top/
-(Add test login credentials here if clients might want to try it, e.g. Employer: demo@x.com / pass123)
+- Recruiter - `username: john` and `password: 1`
+- Job Seeker - `username: lucy` and `password: 1`
 
 ![Screenshot](https://drive.google.com/file/d/1zNbtfLW64-e8KduuHT3f1vPz8yK0kmyY/view?usp=sharing)
 
