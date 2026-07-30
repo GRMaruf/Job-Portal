@@ -7,8 +7,8 @@ A full-stack job board where employers post listings and job seekers apply — b
 - Job Seeker - `username: lucy` and `password: 1`
 
 <img width="1046" height="467" alt="job-3" src="https://github.com/user-attachments/assets/6601b7f3-50d5-467f-b0fa-a5ecd298cfa4" />
-<img width="1357" height="640" alt="job-dashboard 2" src="https://github.com/user-attachments/assets/bd3ef607-f0af-4261-be33-07c039847dd3" />
 <img width="1339" height="619" alt="job-dashboard" src="https://github.com/user-attachments/assets/0b1ccb16-7ca7-46b1-8c55-831718ed8f40" />
+<img width="1357" height="640" alt="job-dashboard 2" src="https://github.com/user-attachments/assets/bd3ef607-f0af-4261-be33-07c039847dd3" />
 <img width="1359" height="626" alt="job-2" src="https://github.com/user-attachments/assets/2a6d677a-b46d-4d35-a143-2591311ba716" />
 
 
