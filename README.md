@@ -6,11 +6,10 @@ A full-stack job board where employers post listings and job seekers apply — b
 - Recruiter - `username: john` and `password: 1`
 - Job Seeker - `username: lucy` and `password: 1`
 
-![Screenshot](https://drive.google.com/file/d/1zNbtfLW64-e8KduuHT3f1vPz8yK0kmyY/view?usp=sharing)
+<img width="1046" height="467" alt="job-3" src="https://github.com/user-attachments/assets/6601b7f3-50d5-467f-b0fa-a5ecd298cfa4" />
+<img width="1359" height="634" alt="job-1" src="https://github.com/user-attachments/assets/87d88e39-9d71-41c8-aa11-3d225230132a" />
+<img width="1359" height="626" alt="job-2" src="https://github.com/user-attachments/assets/2a6d677a-b46d-4d35-a143-2591311ba716" />
 
-![Screenshot](https://drive.google.com/file/d/1D9aagbuk577eERO_KEi7C2nM9VR8Rjx0/view?usp=drive_link)
-
-![Screenshot](https://drive.google.com/file/d/1JJOtBn-f_kysg9n9pCHpG6iLbrC3yrHo/view?usp=drive_link)
 
 ## Features
 - Role-based authentication (Employer vs Job Seeker)
